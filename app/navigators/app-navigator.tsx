@@ -17,8 +17,9 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {CameraScreen} from '../screens/camera/camera.screen';
 import {scale} from '../theme/scale';
 import {colors} from '../theme/colors';
-import {FontSize} from '../theme/font-size';
-import {SettingsTabScreen} from '../screens/settingsTab/settingsTab.screen';
+import {scale} from '../theme/scale';
+import {createStyle} from './navigation.styles';
+import OnBoardingScreenTwo from '../screens/onboarding/onboardingTwo.screen';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -103,6 +104,78 @@ const TabStack = () => {
         options={{tabBarLabel: 'Settings', tabBarShowLabel: false}}
       />
     </Tab.Navigator>
+  );
+};
+
+const AuthStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+      <Stack.Screen
+        name="OnBoardingScreenTwo"
+        component={OnBoardingScreenTwo}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const RootStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const CombinedStack = () => {
+  const isAuthenticated = false;
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false, animationEnabled: true}}>
+      <Stack.Screen
+        name="auth"
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        component={isAuthenticated ? TabStack : AuthStack}
+      />
+      <Stack.Screen
+        name="tabStack"
+        component={TabStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+      <Stack.Screen
+        name="authStack"
+        component={AuthStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+      <Stack.Screen
+        name="rootStack"
+        component={RootStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 
