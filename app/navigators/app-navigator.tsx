@@ -5,6 +5,10 @@ import React from 'react';
 import {Animated, Platform, Text, View} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from '@react-navigation/stack';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -14,11 +18,10 @@ import {navigationRef} from './navigation-utilities';
 
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {CameraScreen} from '../screens/camera/camera.screen';
-import {scale} from '../theme/scale';
+import OnBoardingScreen from '../screens/onboarding/onboarding.screen';
 import {colors} from '../theme/colors';
-import {FontSize} from '../theme/font-size';
-import {SettingsTabScreen} from '../screens/settingsTab/settingsTab.screen';
+import {scale} from '../theme/scale';
+import {createStyle} from './navigation.styles';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -28,10 +31,11 @@ const av = new Animated.Value(0);
 av.addListener(() => {
   return;
 });
-
+const Stack = createStackNavigator<NavigatorParamList>();
 const Tab = createBottomTabNavigator<NavigatorParamList>();
 
 const TabStack = () => {
+  const styles = createStyle();
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -39,37 +43,27 @@ const TabStack = () => {
         keyboardHidesTabBar: true,
         tabBarIcon: ({focused, size}) => {
           let iconName: string = 'camera';
-
           let tabName: string = 'Home';
-          if (route.name == 'camera') {
+          if (route.name == 'OnBoardingScreen') {
             iconName = focused ? 'camera' : 'camera';
             tabName = 'Camera';
-          } else if (route.name == 'settings') {
-            iconName = 'cog';
-            tabName = 'Settings';
           }
           return (
-            <View
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                width: scale(100),
-              }}>
+            <View style={styles.tabContainer}>
               <MaterialCommunityIcons
                 name={iconName}
                 size={scale(focused ? 25 : 23)}
                 color={focused ? colors.white : colors.icon}
               />
-
               <Text
                 numberOfLines={1}
-                style={{
-                  fontWeight: focused ? '600' : '400',
-                  color: focused ? colors.white : colors.icon,
-                  fontSize: FontSize.FONT_12Px,
-                  // fontFamily: typography.medium,
-                }}>
+                style={[
+                  styles.textStyle,
+                  {
+                    fontWeight: focused ? '600' : '400',
+                    color: focused ? colors.white : colors.icon,
+                  },
+                ]}>
                 {tabName}
               </Text>
             </View>
@@ -90,26 +84,85 @@ const TabStack = () => {
           backgroundColor: colors.black,
         },
       })}
-      initialRouteName={'camera'}>
+      initialRouteName={'OnBoardingScreen'}>
       <Tab.Screen
-        name="camera"
-        component={CameraScreen}
-        options={{tabBarLabel: 'Camera', tabBarShowLabel: false}}
-      />
-
-      <Tab.Screen
-        name="settings"
-        component={SettingsTabScreen}
-        options={{tabBarLabel: 'Settings', tabBarShowLabel: false}}
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
       />
     </Tab.Navigator>
+  );
+};
+
+const AuthStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const RootStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const CombinedStack = () => {
+  const isAuthenticated = false;
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false, animationEnabled: true}}>
+      <Stack.Screen
+        name="auth"
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        component={isAuthenticated ? TabStack : AuthStack}
+      />
+      <Stack.Screen
+        name="tabStack"
+        component={TabStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+      <Stack.Screen
+        name="authStack"
+        component={AuthStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+      <Stack.Screen
+        name="rootStack"
+        component={RootStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 
 export function AppNavigator(props: NavigationProps) {
   return (
     <NavigationContainer ref={navigationRef} {...props}>
-      {TabStack()}
+      {CombinedStack()}
     </NavigationContainer>
   );
 }
