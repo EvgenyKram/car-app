@@ -2,12 +2,13 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {AppNavigator} from './app/navigators/app-navigator';
 import {colors} from './app/theme/colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <AppNavigator />
-    </View>
+    </SafeAreaView>
   );
 };
 
