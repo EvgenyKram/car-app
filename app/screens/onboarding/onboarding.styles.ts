@@ -14,6 +14,7 @@ export const createStyles = () =>
       flex: 1,
       paddingHorizontal: scale(18),
       justifyContent: 'space-between',
+      paddingTop: scale(12),
     },
     logoContainer: {
       backgroundColor: colors.white,

@@ -34,7 +34,7 @@ const SignInScreen = () => {
           secureTextEntry={isSecure}
           onChangeText={e => console.log(e)}
           placeholder={'Password'}
-          onSecurePress={e => setIsSecure(e)}
+          onSecurePress={() => setIsSecure(!isSecure)}
         />
       </View>
       <View style={[styles.colG2]}>

@@ -10,6 +10,7 @@ export const createStyles = () =>
       flex: 1,
       backgroundColor: colors.background,
       paddingHorizontal: scale(18),
+      paddingTop: scale(28),
     },
     carLogo: {
       height: scale(38),
