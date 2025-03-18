@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/colors';
 import {scale} from '../../theme/scale';
 import {FontSize} from '../../theme/font-size';
+import {typography} from '../../theme/typography';
 
 export const createStyles = () =>
   StyleSheet.create({
@@ -23,6 +24,8 @@ export const createStyles = () =>
     titleStyle: {
       fontSize: FontSize.FONT_24Px,
       color: colors.black,
+      flex: 1,
+      fontFamily: typography.bold,
     },
     textContainer: {
       paddingTop: scale(38),
@@ -31,11 +34,12 @@ export const createStyles = () =>
     textStyle: {
       color: colors.black,
       fontSize: FontSize.FONT_26Px,
+      fontFamily: typography.semiBold,
     },
     textRemember: {
       fontSize: FontSize.FONT_12Px,
       color: colors.placeholder,
-      fontWeight: '500',
+      fontFamily: typography.regular,
     },
     inputContainer: {
       rowGap: scale(6),
@@ -58,12 +62,19 @@ export const createStyles = () =>
       borderWidth: 1,
       borderColor: colors.button,
     },
+    outlineButtonSignUpText: {
+      color: colors.black,
+      fontFamily: typography.bold,
+      fontSize: FontSize.FONT_18Px,
+    },
     outlineButtonText: {
       color: colors.black,
-      fontWeight: '600',
+      fontFamily: typography.bold,
+      fontSize: FontSize.FONT_14Px,
     },
     buttonText: {
-      fontWeight: '600',
+      fontFamily: typography.bold,
+      fontSize: FontSize.FONT_18Px,
     },
     buttonContainer: {
       rowGap: scale(14),
@@ -79,12 +90,14 @@ export const createStyles = () =>
     orText: {
       fontSize: FontSize.FONT_12Px,
       width: scale(15),
+      fontFamily: typography.regular,
       color: colors.placeholder,
     },
     orBorder: {
       height: 1,
       flex: 1,
-      backgroundColor: colors.border,
+      backgroundColor: colors.divider,
+      marginVertical: scale(18),
     },
     buttonStyle: {
       flexDirection: 'row',
@@ -93,19 +106,22 @@ export const createStyles = () =>
     iconButtonStyle: {
       backgroundColor: colors.outlineButtonBg,
       borderWidth: 1,
-      borderColor: colors.button,
+      borderColor: colors.btnBorder,
       flexDirection: 'row',
+      alignItems: 'center',
       columnGap: scale(8),
+      paddingVertical: scale(10),
     },
     mt14: {
       marginTop: scale(14),
     },
     haveAccountContainer: {
-      marginVertical: scale(4),
       alignItems: 'center',
+      marginTop: scale(28),
+      marginBottom: scale(22),
     },
     dontHaveText: {
       color: colors.placeholder,
-      fontWeight: '400',
+      fontFamily: typography.regular,
     },
   });

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TextInput, View} from 'react-native';
+import {Image, Pressable, TextInput, View} from 'react-native';
 import {createStyles} from './input.styles';
 import {colors} from '../../theme/colors';
 import assets from '../../assets';
@@ -9,6 +9,8 @@ const InputComponent = ({
   onChangeText,
   secureTextEntry,
   placeholder,
+  isSecure,
+  onSecurePress,
 }: IInputProps) => {
   const styles = createStyles();
   const {eye} = assets;
@@ -22,8 +24,10 @@ const InputComponent = ({
         secureTextEntry={secureTextEntry}
         onChangeText={onChangeText}
       />
-      {secureTextEntry && (
-        <Image source={eye} style={styles.eye} resizeMode="contain" />
+      {isSecure && (
+        <Pressable onPress={onSecurePress}>
+          <Image source={eye} style={styles.eye} resizeMode="contain" />
+        </Pressable>
       )}
     </View>
   );

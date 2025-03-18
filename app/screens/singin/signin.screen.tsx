@@ -1,22 +1,24 @@
-import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
 import React from 'react';
-import {createStyles} from './signin.styles';
-import assets from '../../assets';
-import InputComponent from '../../components/input/component';
-import CheckBoxComponent from '../../components/checkbox/component';
-import Button from '../../components/button /component';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Image, ScrollView, Text, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import assets from '../../assets';
+import Button from '../../components/button /component';
+import CheckBoxComponent from '../../components/checkbox/component';
+import InputComponent from '../../components/input/component';
 import {scale} from '../../theme/scale';
+import {createStyles} from './signin.styles';
+import {useSignin} from './signin.hook';
 
 const SignInScreen = () => {
   const styles = createStyles();
+  const {isSecure, setIsSecure} = useSignin();
   const {logo_black} = assets;
   return (
     <ScrollView style={styles.container}>
       <View style={styles.flexRow}>
         <Image source={logo_black} style={styles.carLogo} />
-        <Text style={styles.titleStyle}>Qentt</Text>
+        <Text style={styles.titleStyle}>Qent</Text>
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.textStyle}>Welcome Back</Text>
@@ -28,9 +30,11 @@ const SignInScreen = () => {
           placeholder={'Email/Phone Number'}
         />
         <InputComponent
-          secureTextEntry={true}
+          isSecure
+          secureTextEntry={isSecure}
           onChangeText={e => console.log(e)}
           placeholder={'Password'}
+          onSecurePress={e => setIsSecure(e)}
         />
       </View>
       <View style={[styles.colG2]}>
@@ -49,7 +53,7 @@ const SignInScreen = () => {
         <Button text="Login" textStyles={styles.buttonText} />
         <Button
           text="Sign Up"
-          textStyles={styles.outlineButtonText}
+          textStyles={styles.outlineButtonSignUpText}
           buttonStyles={styles.outlineButton}
         />
       </View>
@@ -75,7 +79,7 @@ const SignInScreen = () => {
       <View style={styles.haveAccountContainer}>
         <Text style={styles.dontHaveText}>
           Don't have an account ? {'\t'}
-          <Text>Sign up</Text>
+          <Text style={styles.dontHaveText}>Sign Up</Text>
         </Text>
       </View>
     </ScrollView>

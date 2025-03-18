@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/colors';
 import {scale} from '../../theme/scale';
 import {FontSize} from '../../theme/font-size';
+import {typography} from '../../theme/typography';
 
 export const createStyles = () =>
   StyleSheet.create({
@@ -31,6 +32,7 @@ export const createStyles = () =>
     title: {
       color: colors.white,
       fontSize: FontSize.FONT_40Px,
+      fontFamily: typography.semiBold,
     },
     title2: {
       fontSize: FontSize.FONT_30Px,
@@ -39,7 +41,7 @@ export const createStyles = () =>
       marginBottom: scale(32),
     },
     buttonText: {
-      fontWeight: '500',
+      fontFamily: typography.bold,
     },
     infoTextContainer: {
       marginBottom: scale(42),
@@ -47,6 +49,6 @@ export const createStyles = () =>
     infoText: {
       fontSize: FontSize.FONT_13Px,
       color: colors.white,
-      fontWeight: '400',
+      fontFamily: typography.regular,
     },
   });
