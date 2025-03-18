@@ -1,3 +1,4 @@
+import {JSX} from 'react';
 import {TextStyle, ViewStyle} from 'react-native';
 
 export interface IButtonProps {
@@ -5,4 +6,5 @@ export interface IButtonProps {
   text: string;
   buttonStyles?: ViewStyle;
   textStyles?: TextStyle;
+  component?: JSX.Element;
 }

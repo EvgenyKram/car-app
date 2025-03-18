@@ -1,8 +1,7 @@
-import type {RouteProp} from '@react-navigation/native';
-
 export type NavigatorParamList = {
   ['OnBoardingScreen']: undefined;
   ['OnBoardingScreenTwo']: undefined;
+  ['SignInScreen']: undefined;
 };
 
 export type ScreenName = keyof NavigatorParamList;
