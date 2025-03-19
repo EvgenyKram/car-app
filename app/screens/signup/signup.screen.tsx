@@ -5,7 +5,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import assets from '../../assets';
 import Button from '../../components/button /component';
 import InputComponent from '../../components/input/component';
-import {goBack} from '../../navigators/navigation-utilities';
+import {goBack, navigate} from '../../navigators/navigation-utilities';
 import {scale} from '../../theme/scale';
 import {renderMarginTop} from '../../utils/ui-utils';
 import {useSignup} from './signup.hook';
@@ -49,6 +49,7 @@ const SignUpScreen = () => {
       <View style={styles.buttonContainer}>
         <Button text="Login" textStyles={styles.buttonText} />
         <Button
+          onPress={() => navigate('ResetScreen')}
           text="Sign Up"
           textStyles={styles.outlineButtonSignUpText}
           buttonStyles={styles.outlineButton}

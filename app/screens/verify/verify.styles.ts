@@ -12,7 +12,13 @@ export const createStyles = () =>
       paddingHorizontal: scale(18),
       paddingTop: scale(28),
     },
-
+    main: {
+      flex: 0.8,
+      justifyContent: 'center',
+    },
+    flex: {
+      flex: 1,
+    },
     carLogo: {
       height: scale(38),
       width: scale(38),
@@ -32,6 +38,11 @@ export const createStyles = () =>
     textContainer: {
       paddingTop: scale(38),
       marginBottom: scale(12),
+    },
+    infoText: {
+      color: colors.placeholder,
+      fontFamily: typography.regular,
+      textAlign: 'center',
     },
     textStyle: {
       color: colors.black,
