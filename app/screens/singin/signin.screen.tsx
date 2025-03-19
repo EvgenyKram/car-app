@@ -30,6 +30,7 @@ const SignInScreen = () => {
           onChangeText={e => console.log(e)}
           placeholder={'Email/Phone Number'}
         />
+
         <InputComponent
           isSecure
           secureTextEntry={isSecure}
