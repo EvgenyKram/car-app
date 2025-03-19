@@ -9,6 +9,7 @@ import InputComponent from '../../components/input/component';
 import {scale} from '../../theme/scale';
 import {createStyles} from './signin.styles';
 import {useSignin} from './signin.hook';
+import {renderMarginBottom} from '../../utils/ui-utils';
 
 const SignInScreen = () => {
   const styles = createStyles();
@@ -82,6 +83,7 @@ const SignInScreen = () => {
           <Text style={styles.dontHaveText}>Sign Up</Text>
         </Text>
       </View>
+      {renderMarginBottom(26)}
     </ScrollView>
   );
 };

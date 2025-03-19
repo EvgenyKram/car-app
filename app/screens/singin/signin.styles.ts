@@ -119,7 +119,7 @@ export const createStyles = () =>
     haveAccountContainer: {
       alignItems: 'center',
       marginTop: scale(28),
-      marginBottom: scale(22),
+      paddingBottom: scale(28),
     },
     dontHaveText: {
       color: colors.placeholder,
