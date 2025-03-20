@@ -11,6 +11,7 @@ const InputComponent = ({
   placeholder,
   isSecure,
   onSecurePress,
+  keyboardType,
 }: IInputProps) => {
   const styles = createStyles();
   const {eye} = assets;
@@ -23,6 +24,7 @@ const InputComponent = ({
         placeholderTextColor={colors.placeholder}
         secureTextEntry={secureTextEntry}
         onChangeText={onChangeText}
+        keyboardType={keyboardType}
       />
       {isSecure && (
         <Pressable onPress={onSecurePress}>

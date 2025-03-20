@@ -32,6 +32,7 @@ const VerifyScreen = () => {
           <View style={styles.inputContainer}>
             <CountryComponent onPress={e => console.log(e)} />
             <InputComponent
+              keyboardType="numeric"
               onChangeText={e => console.log(e)}
               placeholder={'Phone Number'}
             />
