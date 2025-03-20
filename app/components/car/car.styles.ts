@@ -7,28 +7,30 @@ import {typography} from '../../theme/typography';
 export const createStyles = () =>
   StyleSheet.create({
     container: {
+      backgroundColor: colors.white,
       borderWidth: 1,
       borderColor: colors.border,
-      borderRadius: scale(10),
-      backgroundColor: colors.white,
-      paddingVertical: scale(2),
+      borderRadius: scale(16),
+      maxWidth: '50%',
+      paddingBottom: scale(12),
       marginTop: scale(12),
+    },
+    carImage: {
+      height: scale(100),
+      width: scale(160),
+    },
+    title: {fontFamily: typography.semiBold, fontSize: FontSize.FONT_14Px},
+    flex: {
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingRight: scale(10),
-      height: scale(50),
+      columnGap: scale(4),
+    },
+    textContainer: {
       paddingHorizontal: scale(12),
     },
-    input: {
-      fontSize: FontSize.FONT_13Px,
-      color: colors.black,
+    text: {
+      fontSize: FontSize.FONT_12Px,
+      color: colors.placeholder,
       fontFamily: typography.regular,
-      paddingVertical: scale(12),
-      flex: 1,
-    },
-    eye: {
-      height: scale(22),
-      width: scale(22),
     },
   });

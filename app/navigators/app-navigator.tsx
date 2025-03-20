@@ -28,6 +28,7 @@ import SignUpScreen from '../screens/signup/signup.screen';
 import ResetScreen from '../screens/reset/reset.screen';
 import VerifyScreen from '../screens/verify/verify.screen';
 import OtpScreen from '../screens/otp/otp.screen';
+import HomeScreen from '../screens/home/home.screen';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -50,7 +51,7 @@ const TabStack = () => {
         tabBarIcon: ({focused, size}) => {
           let iconName: string = 'camera';
           let tabName: string = 'Home';
-          if (route.name == 'OnBoardingScreen') {
+          if (route.name == 'HomeScreen') {
             iconName = focused ? 'camera' : 'camera';
             tabName = 'Camera';
           }
@@ -90,10 +91,10 @@ const TabStack = () => {
           backgroundColor: colors.black,
         },
       })}
-      initialRouteName={'OnBoardingScreen'}>
+      initialRouteName={'HomeScreen'}>
       <Tab.Screen
-        name="OnBoardingScreen"
-        component={OnBoardingScreen}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
       />
     </Tab.Navigator>
@@ -171,7 +172,7 @@ const RootStack = () => {
 };
 
 const CombinedStack = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false, animationEnabled: true}}>
