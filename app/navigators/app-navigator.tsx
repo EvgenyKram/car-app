@@ -29,6 +29,7 @@ import ResetScreen from '../screens/reset/reset.screen';
 import VerifyScreen from '../screens/verify/verify.screen';
 import OtpScreen from '../screens/otp/otp.screen';
 import HomeScreen from '../screens/home/home.screen';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -50,29 +51,18 @@ const TabStack = () => {
         keyboardHidesTabBar: true,
         tabBarIcon: ({focused, size}) => {
           let iconName: string = 'camera';
-          let tabName: string = 'Home';
           if (route.name == 'HomeScreen') {
-            iconName = focused ? 'camera' : 'camera';
-            tabName = 'Camera';
+            iconName = focused ? 'home' : 'home';
+          } else if (route.name == 'OnBoardingScreen') {
+            iconName = focused ? 'search' : 'search';
           }
           return (
             <View style={styles.tabContainer}>
-              <MaterialCommunityIcons
+              <MaterialIcons
                 name={iconName}
                 size={scale(focused ? 25 : 23)}
                 color={focused ? colors.white : colors.icon}
               />
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.textStyle,
-                  {
-                    fontWeight: focused ? '600' : '400',
-                    color: focused ? colors.white : colors.icon,
-                  },
-                ]}>
-                {tabName}
-              </Text>
             </View>
           );
         },
@@ -88,13 +78,22 @@ const TabStack = () => {
             Platform.OS == 'ios'
               ? scale(50 + useSafeAreaInsets().bottom)
               : scale(60),
-          backgroundColor: colors.black,
+          backgroundColor: colors.bgTab,
+          position: 'absolute',
+          bottom: scale(28),
+          borderRadius: scale(30),
+          marginHorizontal: scale(12),
         },
       })}
       initialRouteName={'HomeScreen'}>
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
+        options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
+      />
+      <Tab.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
         options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
       />
     </Tab.Navigator>

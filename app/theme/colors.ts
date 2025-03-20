@@ -21,4 +21,5 @@ export const colors = {
   btnBorder: '#D7D7D7',
   gray: '#767676',
   star: '#FF8F3A',
+  bgTab: '#21292B',
 };
