@@ -12,8 +12,7 @@ export const createStyles = () =>
       borderColor: colors.border,
       borderRadius: scale(16),
       maxWidth: '50%',
-      paddingBottom: scale(12),
-      marginTop: scale(12),
+      paddingBottom: scale(10),
     },
     carImage: {
       height: scale(100),
@@ -23,7 +22,10 @@ export const createStyles = () =>
     flex: {
       flexDirection: 'row',
       alignItems: 'center',
-      columnGap: scale(4),
+      columnGap: scale(2),
+    },
+    textBold: {
+      fontFamily: typography.semiBold,
     },
     textContainer: {
       paddingHorizontal: scale(12),
@@ -32,5 +34,42 @@ export const createStyles = () =>
       fontSize: FontSize.FONT_12Px,
       color: colors.placeholder,
       fontFamily: typography.regular,
+    },
+    dollarContainer: {
+      borderColor: colors.gray,
+      borderWidth: scale(1),
+      height: scale(14),
+      width: scale(14),
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 100,
+    },
+    priceContainer: {
+      paddingVertical: scale(4),
+      alignItems: 'center',
+      columnGap: scale(8),
+    },
+    price: {
+      fontSize: FontSize.FONT_11Px,
+      color: colors.black,
+    },
+    carBackground: {
+      borderTopRightRadius: scale(16),
+      borderTopLeftRadius: scale(16),
+      backgroundColor: colors.carBg,
+    },
+    favContainer: {
+      borderWidth: 1,
+      borderColor: colors.gray,
+      backgroundColor: colors.white,
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'absolute',
+      zIndex: 999,
+      right: scale(4),
+      top: scale(4),
+      borderRadius: 100,
+      height: scale(30),
+      width: scale(30),
     },
   });

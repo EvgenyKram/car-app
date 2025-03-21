@@ -1,12 +1,13 @@
-import {View, Text, Pressable, Image} from 'react-native';
 import React from 'react';
-import {createStyles} from './car.styles';
-import assets from '../../assets';
+import {Image, Pressable, Text, View} from 'react-native';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import {scale} from '../../theme/scale';
+import assets from '../../assets';
 import {colors} from '../../theme/colors';
+import {scale} from '../../theme/scale';
 import {renderMarginBottom} from '../../utils/ui-utils';
+import {createStyles} from './car.styles';
 
 const CarComponent = () => {
   const styles = createStyles();
@@ -14,8 +15,14 @@ const CarComponent = () => {
 
   return (
     <Pressable style={styles.container}>
-      <Image source={ferrari} resizeMode="contain" style={styles.carImage} />
+      <Pressable style={styles.favContainer}>
+        <MaterialCommunityIcons name={'cards-heart-outline'} size={scale(18)} />
+      </Pressable>
+      <View style={styles.carBackground}>
+        <Image source={ferrari} resizeMode="contain" style={styles.carImage} />
+      </View>
       <View style={styles.textContainer}>
+        {renderMarginBottom(4)}
         <Text style={styles.title}>Ferrari</Text>
         {renderMarginBottom(4)}
         <View style={styles.flex}>
@@ -23,9 +30,32 @@ const CarComponent = () => {
           <MaterialIcons name="star" size={scale(20)} color={colors.star} />
         </View>
         {renderMarginBottom(4)}
-        <View style={styles.flex}>
-          <EvilIcons name="location" size={scale(20)} color={colors.gray} />
+        <View style={[styles.flex]}>
+          <MaterialIcons
+            name="location-pin"
+            size={scale(16)}
+            color={colors.gray}
+          />
           <Text style={styles.text}>WashingTon DC</Text>
+        </View>
+        {renderMarginBottom(2)}
+        <View style={[styles.flex, styles.priceContainer]}>
+          <View style={[styles.flex]}>
+            <MaterialCommunityIcons
+              name="sofa-single-outline"
+              size={scale(16)}
+              color={colors.gray}
+            />
+            <Text style={[styles.text, styles.textBold]}>4 Seats</Text>
+          </View>
+          <View style={[styles.flex]}>
+            <Pressable style={styles.dollarContainer}>
+              <Fontisto name="dollar" size={scale(8)} color={colors.gray} />
+            </Pressable>
+            <Text style={[styles.text, styles.textBold, styles.price]}>
+              $200/Day
+            </Text>
+          </View>
         </View>
       </View>
     </Pressable>

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable eqeqeq */
 import React from 'react';
-import {Animated, Platform, Text, View} from 'react-native';
+import {Animated, Platform, View} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {
@@ -12,24 +12,27 @@ import {
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {NavigatorParamList} from './navigation-route';
 import {navigationRef} from './navigation-utilities';
 
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import HomeScreen from '../screens/home/home.screen';
 import OnBoardingScreen from '../screens/onboarding/onboarding.screen';
+import OnBoardingScreenTwo from '../screens/onboarding/onboardingTwo.screen';
+import OtpScreen from '../screens/otp/otp.screen';
+import ResetScreen from '../screens/reset/reset.screen';
+import SignUpScreen from '../screens/signup/signup.screen';
+import SignInScreen from '../screens/singin/signin.screen';
+import VerifyScreen from '../screens/verify/verify.screen';
 import {colors} from '../theme/colors';
 import {scale} from '../theme/scale';
 import {createStyle} from './navigation.styles';
-import OnBoardingScreenTwo from '../screens/onboarding/onboardingTwo.screen';
-import SignInScreen from '../screens/singin/signin.screen';
-import SignUpScreen from '../screens/signup/signup.screen';
-import ResetScreen from '../screens/reset/reset.screen';
-import VerifyScreen from '../screens/verify/verify.screen';
-import OtpScreen from '../screens/otp/otp.screen';
-import HomeScreen from '../screens/home/home.screen';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AccountScreen from '../screens/account/account.screen';
+import NotificationScreen from '../screens/notification/notification.screen';
+import MessageScreen from '../screens/message/message.screen';
+import SearchScreen from '../screens/search/search.screen';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -53,8 +56,14 @@ const TabStack = () => {
           let iconName: string = 'camera';
           if (route.name == 'HomeScreen') {
             iconName = focused ? 'home' : 'home';
-          } else if (route.name == 'OnBoardingScreen') {
+          } else if (route.name == 'SearchScreen') {
             iconName = focused ? 'search' : 'search';
+          } else if (route.name == 'MessageScreen') {
+            iconName = focused ? 'message' : 'message';
+          } else if (route.name == 'NotificationScreen') {
+            iconName = focused ? 'notifications-none' : 'notifications-none';
+          } else if (route.name == 'AccountScreen') {
+            iconName = focused ? 'person-outline' : 'person-outline';
           }
           return (
             <View style={styles.tabContainer}>
@@ -92,8 +101,23 @@ const TabStack = () => {
         options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
       />
       <Tab.Screen
-        name="OnBoardingScreen"
-        component={OnBoardingScreen}
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
+      />
+      <Tab.Screen
+        name="MessageScreen"
+        component={MessageScreen}
+        options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
+      />
+      <Tab.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
+      />
+      <Tab.Screen
+        name="AccountScreen"
+        component={AccountScreen}
         options={{tabBarLabel: 'Onboarding', tabBarShowLabel: false}}
       />
     </Tab.Navigator>

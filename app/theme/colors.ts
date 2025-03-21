@@ -22,4 +22,5 @@ export const colors = {
   gray: '#767676',
   star: '#FF8F3A',
   bgTab: '#21292B',
+  carBg: '#f0f0f0',
 };

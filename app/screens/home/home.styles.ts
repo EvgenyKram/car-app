@@ -76,28 +76,7 @@ export const createStyles = () =>
       rowGap: scale(12),
       marginTop: scale(12),
     },
-    brandContainer: {
-      marginRight: scale(30),
-      alignItems: 'center',
-    },
-    brand: {
-      backgroundColor: colors.black,
-      borderRadius: scale(100),
-      height: scale(50),
-      width: scale(50),
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    brandText: {
-      color: colors.placeholder,
-      fontSize: FontSize.FONT_12Px,
-      fontFamily: typography.regular,
-    },
-    brandImage: {
-      height: scale(28),
-      width: scale(28),
-      textAlign: 'center',
-    },
+
     showCaseCars: {
       backgroundColor: colors.white,
       flex: 1,
