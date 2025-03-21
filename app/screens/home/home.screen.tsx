@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const {tesla} = assets;
   return (
     <View style={styles.container}>
-      <HeaderComponent title="Qent" hasBack />
+      <HeaderComponent title="Qent" />
       <View style={styles.main}>
         <SearchComponent />
         <View style={[styles.showCase, styles.p18]}>
