@@ -6,8 +6,9 @@ import {colors} from '../../theme/colors';
 import {scale} from '../../theme/scale';
 import InputComponent from '../input/component';
 import {createStyles} from './search.styles';
+import {ISearchProps} from './ISearch.props';
 
-const SearchComponent = () => {
+const SearchComponent = ({onFilterPress}: ISearchProps) => {
   const styles = createStyles();
   return (
     <View style={[styles.flexRow]}>
@@ -19,7 +20,9 @@ const SearchComponent = () => {
         containerStyle={styles.inputContainer}
         placeholder="Search your dream car....."
       />
-      <Pressable style={[styles.borderRound, styles.wh]}>
+      <Pressable
+        onPress={onFilterPress}
+        style={[styles.borderRound, styles.wh]}>
         <MaterialCommunityIcons
           name="filter-outline"
           size={scale(26)}

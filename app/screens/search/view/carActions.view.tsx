@@ -6,7 +6,7 @@ import {scale} from '../../../theme/scale';
 import {colors} from '../../../theme/colors';
 import Button from '../../../components/button /component';
 
-const CarActions = () => {
+const CarActionView = () => {
   const styles = createStyles();
   return (
     <View style={[styles.flex, styles.priceContainer]}>
@@ -27,4 +27,4 @@ const CarActions = () => {
   );
 };
 
-export default CarActions;
+export default CarActionView;

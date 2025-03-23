@@ -85,4 +85,22 @@ export const createStyles = () =>
     textStyles: {
       fontSize: FontSize.FONT_12Px,
     },
+    filterView: {
+      flex: 1,
+      backgroundColor: colors.white,
+      borderTopRightRadius: scale(15),
+      borderTopLeftRadius: scale(15),
+    },
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingVertical: scale(12),
+      paddingHorizontal: scale(18),
+      borderBottomColor: colors.btnBorder,
+      borderBottomWidth: 0.5,
+    },
+    _f08: {
+      flex: 0.08,
+    },
   });
