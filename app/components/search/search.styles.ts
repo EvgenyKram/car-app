@@ -10,6 +10,7 @@ export const createStyles = () =>
       columnGap: scale(14),
       paddingVertical: scale(12),
       paddingHorizontal: scale(18),
+      backgroundColor: colors.background,
     },
     inputContainer: {
       flex: 1,

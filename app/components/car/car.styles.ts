@@ -28,7 +28,7 @@ export const createStyles = () =>
       fontFamily: typography.semiBold,
     },
     textContainer: {
-      paddingHorizontal: scale(12),
+      paddingHorizontal: scale(8),
     },
     text: {
       fontSize: FontSize.FONT_12Px,

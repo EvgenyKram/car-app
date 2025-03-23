@@ -8,10 +8,11 @@ import {renderMarginTop} from '../../utils/ui-utils';
 const CarBrandComponent = ({
   text,
   isHorizontal = false,
-  isSelected = false,
+  isSelected = 1,
+  item,
 }: ICarProps) => {
   const {tesla} = assets;
-  const styles = createStyles(isHorizontal, isSelected);
+  const styles = createStyles(isHorizontal, isSelected === item);
   return (
     <Pressable style={[styles.brandContainer]}>
       <View style={styles.brand}>
