@@ -21,9 +21,7 @@ const HomeScreen = () => {
             showsHorizontalScrollIndicator={false}
             horizontal
             data={[1, 2, 3, 4, 5]}
-            renderItem={({item}) => (
-              <CarBrandComponent text="Tesla" isHorizontal />
-            )}
+            renderItem={({item}) => <CarBrandComponent text="Tesla" />}
           />
         </View>
         <View style={[styles.showCaseCars, styles.p18]}>

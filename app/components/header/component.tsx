@@ -1,24 +1,24 @@
 import React from 'react';
 import {Image, Pressable, Text, View} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import assets from '../../assets';
+import {goBack} from '../../navigators/navigation-utilities';
 import {colors} from '../../theme/colors';
 import {scale} from '../../theme/scale';
 import {createStyles} from './header.styles';
 import {IHeaderProps} from './IHeader.props';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HeaderComponent = ({title, hasBack = false}: IHeaderProps) => {
   const styles = createStyles();
-
   const {logo_black, person} = assets;
 
   return (
     <View style={styles.header}>
       <View style={styles.flexRow}>
         {hasBack ? (
-          <Pressable style={styles.borderRound}>
+          <Pressable onPress={goBack} style={styles.borderRound}>
             <MaterialIcons
               name="chevron-left"
               size={scale(28)}
