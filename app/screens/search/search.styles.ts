@@ -46,7 +46,7 @@ export const createStyles = () =>
     text: {
       fontSize: FontSize.FONT_16Px,
       color: colors.black,
-      fontFamily: typography.semiBold,
+      fontFamily: typography.bold,
     },
     textContainer: {
       paddingHorizontal: scale(12),
@@ -85,7 +85,7 @@ export const createStyles = () =>
       fontSize: FontSize.FONT_12Px,
     },
     filterView: {
-      flex: 1,
+      flex: 0.97,
       backgroundColor: colors.white,
       borderTopRightRadius: scale(15),
       borderTopLeftRadius: scale(15),
@@ -101,5 +101,9 @@ export const createStyles = () =>
     },
     _f08: {
       flex: 0.08,
+    },
+    filterContainer: {
+      paddingHorizontal: scale(18),
+      flex: 1,
     },
   });
