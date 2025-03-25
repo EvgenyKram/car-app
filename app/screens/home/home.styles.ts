@@ -9,7 +9,6 @@ export const createStyles = () =>
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingTop: scale(28),
     },
     main: {
       flex: 1,

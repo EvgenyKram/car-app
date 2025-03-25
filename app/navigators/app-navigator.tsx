@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable eqeqeq */
 import React from 'react';
-import {Animated, Platform, View} from 'react-native';
+import {Animated, ImageBackground, Platform, View} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {

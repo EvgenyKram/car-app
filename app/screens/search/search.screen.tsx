@@ -4,9 +4,9 @@ import CarComponent from '../../components/car/component';
 import CarBrandComponent from '../../components/carBrand/component';
 import HeaderComponent from '../../components/header/component';
 import SearchComponent from '../../components/search/component';
+import {useSearch} from './search.hook';
 import {createStyles} from './search.styles';
 import CarActionView from './view/carActions.view';
-import {useSearch} from './search.hook';
 import FilterView from './view/filter.view';
 
 const SearchScreen = () => {
