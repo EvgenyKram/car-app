@@ -106,4 +106,52 @@ export const createStyles = () =>
       paddingHorizontal: scale(18),
       flex: 1,
     },
+    filterTypeText: {
+      fontSize: FontSize.FONT_16Px,
+      fontFamily: typography.semiBold,
+    },
+    slider: {
+      width: '100%',
+      height: scale(40),
+    },
+    frsb: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      columnGap: scale(12),
+    },
+    inputContainer: {
+      flex: 1,
+    },
+    tabContainerStyle: {
+      borderWidth: 0,
+    },
+    sitingCapTab: {
+      paddingHorizontal: scale(32),
+    },
+    tabStyle: {
+      borderWidth: 1,
+      borderColor: colors.btnBorder,
+    },
+    tabTextStyle: {
+      color: colors.placeholder,
+      fontFamily: typography.regular,
+      fontSize: FontSize.FONT_12Px,
+    },
+    placeHolder: {
+      color: colors.placeholder,
+    },
+    clearAll: {
+      color: colors.black,
+      fontSize: FontSize.FONT_12Px,
+      fontFamily: typography.regular,
+    },
+    btnContainerStyle: {
+      paddingVertical: scale(10),
+      paddingHorizontal: scale(12),
+      backgroundColor: colors.black,
+    },
+    btnTextStyle: {
+      fontSize: FontSize.FONT_12Px,
+    },
   });

@@ -12,6 +12,7 @@ import FilterView from './view/filter.view';
 const SearchScreen = () => {
   const styles = createStyles();
   const {showFilter, setShowFilter} = useSearch();
+
   return (
     <View style={styles.container}>
       <HeaderComponent title="Search" hasBack />

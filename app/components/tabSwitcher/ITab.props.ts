@@ -1,7 +1,12 @@
+import {TextStyle, ViewStyle} from 'react-native';
+
 export interface ITabProps {
   title?: string;
   data: ITab[];
   onPress: (e: ITab) => void;
+  tabContainerStyle?: ViewStyle;
+  tabStyle?: ViewStyle | ViewStyle[];
+  tabTextStyle?: TextStyle;
 }
 
 export interface ITab {
