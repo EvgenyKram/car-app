@@ -11,6 +11,8 @@ export type NavigatorParamList = {
   ['NotificationScreen']: undefined;
   ['MessageScreen']: undefined;
   ['SearchScreen']: undefined;
+  ['CarScreen']: undefined;
+  ['rootStack']: undefined;
 };
 
 export type ScreenName = keyof NavigatorParamList;

@@ -33,6 +33,7 @@ import AccountScreen from '../screens/account/account.screen';
 import NotificationScreen from '../screens/notification/notification.screen';
 import MessageScreen from '../screens/message/message.screen';
 import SearchScreen from '../screens/search/search.screen';
+import CarScreen from '../screens/car/car.screen';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -182,10 +183,12 @@ const AuthStack = () => {
 
 const RootStack = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      initialRouteName="CarScreen"
+      screenOptions={{headerShown: false}}>
       <Stack.Screen
-        name="OnBoardingScreen"
-        component={OnBoardingScreen}
+        name="CarScreen"
+        component={CarScreen}
         options={{
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}
