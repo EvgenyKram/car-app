@@ -2975,6 +2975,7 @@ __metadata:
     react-native: 0.78.0
     react-native-gesture-handler: ^2.15.0
     react-native-safe-area-context: ^5.0.0
+    react-native-ui-datepicker: ^3.1.2
     react-native-vector-icons: ^10.2.0
     react-test-renderer: 19.0.0
     typescript: 5.0.4
@@ -3778,6 +3779,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
+  languageName: node
+  linkType: hard
+
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -4042,7 +4050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.8.15":
+"dayjs@npm:^1.11.13, dayjs@npm:^1.8.15":
   version: 1.11.13
   resolution: "dayjs@npm:1.11.13"
   checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
@@ -5958,6 +5966,13 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: be31027fc72e7cc726206b9f560395604b82e0fddb46c4cbf9f97d049bcef607491a5afc0699612eaa4213ca5be8fd3e1e7cd187b3040988b65c9489838a7c00
+  languageName: node
+  linkType: hard
+
+"jalali-plugin-dayjs@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "jalali-plugin-dayjs@npm:1.1.4"
+  checksum: 9096f72b77589c479a81ec26ba14c1a49188653e566713317bfb149147e8e4037d43be246e89fea4c68c1010090e18ec20dc8093e061ae5aa7c459b8f9b3fd85
   languageName: node
   linkType: hard
 
@@ -7953,6 +7968,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-ui-datepicker@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "react-native-ui-datepicker@npm:3.1.2"
+  dependencies:
+    clsx: ^2.1.1
+    dayjs: ^1.11.13
+    jalali-plugin-dayjs: ^1.1.4
+    lodash: ^4.17.21
+    tailwind-merge: ^3.0.1
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: cfc8295e6137ef9d29d569269da44b47efb7f2a2555d8f3cb79acbdf7d139526ef55df3f368ca1bcbcf76eee7e5ca7816035ae252763aba102ffa3aa1a928196
+  languageName: node
+  linkType: hard
+
 "react-native-vector-icons@npm:^10.2.0":
   version: 10.2.0
   resolution: "react-native-vector-icons@npm:10.2.0"
@@ -8986,6 +9017,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^3.0.1":
+  version: 3.0.2
+  resolution: "tailwind-merge@npm:3.0.2"
+  checksum: fdcf4d9e65c8767077b93de4f6296125d9a761fce1ef85715e7cadbf467973a6b1c5fd95ca3a0416013b24ecfba61d0340f201d7becd1fc1f2f771e007bd5bd3
   languageName: node
   linkType: hard
 
