@@ -110,7 +110,11 @@ const CarScreen = () => {
           </View>
         </View>
       </ScrollView>
-      <Button text="Book Now" buttonStyles={styles.btn} />
+      <Button
+        onPress={() => navigate('BookingScreen')}
+        text="Book Now"
+        buttonStyles={styles.btn}
+      />
       {renderBoderBottom(6)}
     </View>
   );
