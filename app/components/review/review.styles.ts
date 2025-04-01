@@ -20,6 +20,11 @@ export const createStyles = () =>
       width: scale(32),
       height: scale(32),
     },
+    dayText: {
+      color: colors.placeholder,
+      fontSize: FontSize.FONT_12Px,
+      fontFamily: typography.regular,
+    },
     reviewTitle: {
       fontSize: FontSize.FONT_14Px,
       color: colors.black,
@@ -29,6 +34,10 @@ export const createStyles = () =>
       flexDirection: 'row',
       alignItems: 'center',
       columnGap: scale(10),
+    },
+    dayContainer: {
+      flex: 1,
+      justifyContent: 'flex-end',
     },
     frsb: {
       flexDirection: 'row',

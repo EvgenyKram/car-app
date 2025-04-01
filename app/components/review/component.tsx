@@ -8,9 +8,10 @@ import {createStyles} from './review.styles';
 
 interface IReviewComponent {
   containerStyle?: ViewStyle;
+  fromReview?: boolean;
 }
 
-const ReviewComponent = ({containerStyle}: IReviewComponent) => {
+const ReviewComponent = ({containerStyle, fromReview}: IReviewComponent) => {
   const styles = createStyles();
   const {person} = assets;
   return (
@@ -20,11 +21,12 @@ const ReviewComponent = ({containerStyle}: IReviewComponent) => {
           <Image source={person} style={styles.person} resizeMode="contain" />
           <Text style={styles.reviewTitle}>John Doe</Text>
         </View>
-        <View style={styles.frcg}>
-          <Text style={styles.textBold}>5.0</Text>
-          <FontAwesome name="star" size={scale(18)} color={colors.star} />
+        <View style={[styles.frcg, styles.dayContainer]}>
+          {!fromReview && <Text style={styles.textBold}>5.0</Text>}
+          <Text style={styles.dayText}>Today</Text>
         </View>
       </View>
+      <FontAwesome name="star" size={scale(18)} color={colors.star} />
       <Text style={styles.text}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum alias
         accusantium qui rerum iste perferendis consectetur non voluptatibus,
