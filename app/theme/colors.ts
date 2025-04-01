@@ -21,6 +21,7 @@ export const colors = {
   btnBorder: '#D7D7D7',
   gray: '#767676',
   star: '#FF8F3A',
+  unFilledStar: '#C5C8D2',
   bgTab: '#21292B',
   carBg: '#f0f0f0',
   crossBg: '#141B34',

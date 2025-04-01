@@ -35,6 +35,13 @@ export const createStyles = () =>
       alignItems: 'center',
       columnGap: scale(10),
     },
+    starsContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      columnGap: scale(3),
+      marginTop: scale(8),
+      marginBottom: scale(8),
+    },
     dayContainer: {
       flex: 1,
       justifyContent: 'flex-end',

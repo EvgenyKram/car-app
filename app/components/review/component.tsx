@@ -9,9 +9,14 @@ import {createStyles} from './review.styles';
 interface IReviewComponent {
   containerStyle?: ViewStyle;
   fromReview?: boolean;
+  ratingCount?: number;
 }
 
-const ReviewComponent = ({containerStyle, fromReview}: IReviewComponent) => {
+const ReviewComponent = ({
+  containerStyle,
+  fromReview,
+  ratingCount = 4,
+}: IReviewComponent) => {
   const styles = createStyles();
   const {person} = assets;
   return (
@@ -23,10 +28,23 @@ const ReviewComponent = ({containerStyle, fromReview}: IReviewComponent) => {
         </View>
         <View style={[styles.frcg, styles.dayContainer]}>
           {!fromReview && <Text style={styles.textBold}>5.0</Text>}
-          <Text style={styles.dayText}>Today</Text>
+          {fromReview && <Text style={styles.dayText}>Today</Text>}
+          {!fromReview && (
+            <FontAwesome name="star" size={scale(18)} color={colors.star} />
+          )}
         </View>
       </View>
-      <FontAwesome name="star" size={scale(18)} color={colors.star} />
+      {fromReview && (
+        <View style={styles.starsContainer}>
+          {Array.from({length: 5}).map((_, index) => (
+            <FontAwesome
+              name="star"
+              size={scale(14)}
+              color={index < ratingCount ? colors.star : colors.unFilledStar}
+            />
+          ))}
+        </View>
+      )}
       <Text style={styles.text}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum alias
         accusantium qui rerum iste perferendis consectetur non voluptatibus,
