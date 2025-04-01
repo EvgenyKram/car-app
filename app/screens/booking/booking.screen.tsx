@@ -30,9 +30,6 @@ const BookingScreen = () => {
             <Text style={styles.checkMarkText}>confirmation</Text>
           </View>
         </View>
-        <View style={styles.card}>
-          <Text>hellow</Text>
-        </View>
       </View>
     </View>
   );
