@@ -3,6 +3,7 @@ import {FlatList, Pressable, Text, View} from 'react-native';
 import {renderMarginBottom} from '../../utils/ui-utils';
 import {ITabProps} from './ITab.props';
 import {createStyles} from './tab.styles';
+import {colors} from '../../theme/colors';
 
 const TabSwitcher = ({
   title,
@@ -35,6 +36,11 @@ const TabSwitcher = ({
                 tabStyle,
                 item.id === active.id && styles.activeTab,
               ]}>
+              {item?.component && React.isValidElement(item?.component)
+                ? React.cloneElement(item?.component, {
+                    color: item?.id === active.id ? colors.white : colors.gray,
+                  })
+                : item?.component}
               <Text
                 style={[
                   styles.tabText,

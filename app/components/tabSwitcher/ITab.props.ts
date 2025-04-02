@@ -1,3 +1,4 @@
+import {JSX} from 'react';
 import {TextStyle, ViewStyle} from 'react-native';
 
 export interface ITabProps {
@@ -7,10 +8,12 @@ export interface ITabProps {
   tabContainerStyle?: ViewStyle;
   tabStyle?: ViewStyle | ViewStyle[];
   tabTextStyle?: TextStyle;
+  leftAction?: JSX.Element;
 }
 
 export interface ITab {
   id: number;
   label: string;
   value: string;
+  component?: JSX.Element;
 }
