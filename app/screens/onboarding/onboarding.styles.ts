@@ -1,7 +1,7 @@
+import {FontSize} from './../../theme/font-size';
 import {colors} from '../../theme/colors';
 import {StyleSheet} from 'react-native';
 import {scale} from '../../theme/scale';
-import {FontSize} from '../../theme/font-size';
 
 export const createstyles = () =>
   StyleSheet.create({
@@ -29,6 +29,11 @@ export const createstyles = () =>
     textContainer: {
       marginTop: scale(30),
     },
+
+    title2: {
+      fontSize: FontSize.FONT_30Px,
+    },
+
     title: {
       color: colors.white,
       fontSize: FontSize.FONT_40Px,
@@ -38,5 +43,13 @@ export const createstyles = () =>
     },
     buttonText: {
       fontWeight: '500',
+    },
+    infoTextContainer: {
+      marginBottom: scale(42),
+    },
+    infoText: {
+      fontSize: FontSize.FONT_13Px,
+      color: colors.white,
+      fontWeight: '400',
     },
   });
