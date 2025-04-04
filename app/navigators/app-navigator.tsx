@@ -22,6 +22,7 @@ import OnBoardingScreen from '../screens/onboarding/onboarding.screen';
 import {colors} from '../theme/colors';
 import {scale} from '../theme/scale';
 import {createStyle} from './navigation.styles';
+import OnBoardingScreenTwo from '../screens/onboarding/onboardingTwo.screen';
 
 type NavigationProps = Partial<
   React.ComponentProps<typeof NavigationContainer>
@@ -100,6 +101,14 @@ const AuthStack = () => {
       <Stack.Screen
         name="OnBoardingScreen"
         component={OnBoardingScreen}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+      />
+
+      <Stack.Screen
+        name="OnBoardingScreenTwo"
+        component={OnBoardingScreenTwo}
         options={{
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}
