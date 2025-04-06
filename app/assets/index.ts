@@ -4,6 +4,7 @@ const assets = {
   logo: require('./images/logo.png'),
   whiteCar: require('./images/whitecar.png'),
   logo_black: require('./images/logo_black.png'),
+  eye: require('./images/eye.png'),
 };
 
 export default assets;

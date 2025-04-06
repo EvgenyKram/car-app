@@ -12,4 +12,7 @@ export const colors = {
   search: 'rgb(51,52,56)',
   button: '#21292b',
   background: '#F8F8F8',
+  border: '#dee2e6',
+  placeholder: '#7f7f7f',
+  checkBoxBg: '#454545',
 };
