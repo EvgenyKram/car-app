@@ -17,7 +17,7 @@ const InputComponent = ({
       <TextInput
         placeholder={placeholder}
         placeholderTextColor={colors.placeholder}
-        secureTextEntry={true}
+        secureTextEntry={secureTextEntry}
         onChangeText={onChangeText}
         style={styles.input}
       />

@@ -15,4 +15,6 @@ export const colors = {
   border: '#dee2e6',
   placeholder: '#7f7f7f',
   checkBoxBg: '#454545',
+  textForgot: '#454545',
+  outlineButtonBg: '#ededed',
 };
