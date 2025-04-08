@@ -38,6 +38,9 @@ export const createstyles = () =>
       fontSize: FontSize.FONT_26Px,
       fontFamily: typography.semiBold,
     },
+    textCenter:{
+textAlign:'center'
+    },
     textRemember: {
       fontSize: FontSize.FONT_12Px,
       color: colors.placeholder,
@@ -67,7 +70,6 @@ export const createstyles = () =>
     outlineButtonSignUpText: {
       color: colors.black,
       fontFamily: typography.bold,
-      
       fontSize: FontSize.FONT_18Px,
     },
     outlineButtonText: {

@@ -9,6 +9,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {scale} from '../../theme/scale';
 import {ScrollView} from 'react-native-gesture-handler';
+import { navigate } from '../../navigators/navigation-utilities';
 
 const SignInScreen = () => {
   const styles = createstyles();
@@ -49,9 +50,10 @@ const SignInScreen = () => {
       <View style={styles.buttonContainer}>
         <Button text="Login" textStyles={styles.buttonText} />
         <Button
+          onPress={() => navigate('SignUpScreen')}
           text="Sign Up"
+          textStyles={styles.outlineButtonSignUpText}
           buttonStyles={styles.outlineButton}
-          textStyles={styles.outlineButtonText}
         />
       </View>
       <View style={styles.borderContainer}>
