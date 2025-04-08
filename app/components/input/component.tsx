@@ -21,7 +21,9 @@ const InputComponent = ({
         onChangeText={onChangeText}
         style={styles.input}
       />
-      {false && <Image source={eye} style={styles.eye} resizeMode="contain" />}
+      {secureTextEntry && (
+        <Image source={eye} style={styles.eye} resizeMode="contain" />
+      )}
     </View>
   );
 };

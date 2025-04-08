@@ -9,7 +9,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {scale} from '../../theme/scale';
 import {ScrollView} from 'react-native-gesture-handler';
-import { navigate } from '../../navigators/navigation-utilities';
+import {navigate} from '../../navigators/navigation-utilities';
 
 const SignInScreen = () => {
   const styles = createstyles();
